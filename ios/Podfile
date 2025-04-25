@@ -1,27 +1,24 @@
 platform :ios, '13.0'
+
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
-project 'Runner', 'Debug' => :debug, 'Profile' => :release, 'Release' => :release
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
 
 install! 'cocoapods', :deterministic_uuids => false
 
-# 1. Xác định Flutter SDK root
-flutter_root = ENV['FLUTTER_ROOT'] || File.expand_path('..', __dir__)
-
-# 2. Load podhelper.rb để định nghĩa install_all_flutter_pods
-load File.join(flutter_root, 'packages', 'flutter_tools', 'bin', 'podhelper.rb')
+def flutter_installation
+  flutter_root = File.expand_path('..')
+  load File.join(flutter_root, '.flutter-plugins-dependencies')
+end
 
 target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
-  # 3. Cài tất cả Pod của Flutter plugins (bao gồm cloud_firestore)
   install_all_flutter_pods(flutter_root)
-end
 
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    # bổ sung các setting cần thiết cho iOS build
-    flutter_additional_ios_build_settings(target)
-  end
 end
