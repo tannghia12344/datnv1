@@ -1,0 +1,23 @@
+platform :ios, '13.0'
+
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
+
+install! 'cocoapods', :deterministic_uuids => false
+
+def flutter_installation
+  flutter_root = File.expand_path('..')
+  load File.join(flutter_root, '.flutter-plugins-dependencies')
+end
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+
+  flutter_installation
+end
