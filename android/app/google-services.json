@@ -26,6 +26,25 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:22870371310:android:51e875e770a60716b23cff",
+        "android_client_info": {
+          "package_name": "com.example.project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJwqQIEnSr-Ic2sNHj57sFg26wJwCtuvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:22870371310:android:8daedc852018ccc1b23cff",
         "android_client_info": {
           "package_name": "com.example.test_firebase2"

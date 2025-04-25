@@ -23,15 +23,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         return windows;
       case TargetPlatform.linux:
@@ -48,12 +42,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyBrxgx_3zcbhSFLARcnmP-RxqvrH9sNLH4',
-    appId: '1:22870371310:web:9042db84046beb13b23cff',
+    appId: '1:22870371310:web:07d0e642b9aa4840b23cff',
     messagingSenderId: '22870371310',
     projectId: 'pe-app-728db',
     authDomain: 'pe-app-728db.firebaseapp.com',
     storageBucket: 'pe-app-728db.firebasestorage.app',
-    measurementId: 'G-16SKJW375G',
+    measurementId: 'G-5MZ0LLSMNX',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
@@ -72,6 +66,24 @@ class DefaultFirebaseOptions {
     authDomain: 'pe-app-728db.firebaseapp.com',
     storageBucket: 'pe-app-728db.firebasestorage.app',
     measurementId: 'G-5MZ0LLSMNX',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyD_3mpQrQv_04j9C01L-mUjWR-7LGHKQas',
+    appId: '1:22870371310:ios:a422a624596136adb23cff',
+    messagingSenderId: '22870371310',
+    projectId: 'pe-app-728db',
+    storageBucket: 'pe-app-728db.firebasestorage.app',
+    iosBundleId: 'com.example.datnProject',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyD_3mpQrQv_04j9C01L-mUjWR-7LGHKQas',
+    appId: '1:22870371310:ios:a422a624596136adb23cff',
+    messagingSenderId: '22870371310',
+    projectId: 'pe-app-728db',
+    storageBucket: 'pe-app-728db.firebasestorage.app',
+    iosBundleId: 'com.example.datnProject',
   );
 
 }
