@@ -1,12 +1,19 @@
 platform :ios, '13.0'
 
-install! 'cocoapods', :deterministic_uuids => false
-
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
+
+flutter_application_path = File.expand_path('..')
+load File.join(flutter_application_path, 'packages', 'flutter_tools', 'bin', 'podhelper.rb')
 
 target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
-  flutter_install_all_ios_pods(File.dirname(File.realpath(__FILE__)))
+  install_all_flutter_pods(flutter_application_path)
 end
